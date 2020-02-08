@@ -62,7 +62,11 @@
                     id="reserve-unique-id"
                   />
                 </div>
-                <button type="submit" class="btn btn-primary submit">
+                <button
+                  type="submit"
+                  class="btn btn-primary submit"
+                  id="submit-btn"
+                >
                   Submit
                 </button>
               </form>
@@ -95,5 +99,24 @@
       integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
       crossorigin="anonymous"
     ></script>
+    <script>
+      $("#submit-btn").on("click", event => {
+        event.preventDefault();
+        const newRes = {
+          name: $("#reserve-name")
+            .val()
+            .trim(),
+          phone: $("#reserve-phone")
+            .val()
+            .trim(),
+          email: $("#reserve-email")
+            .val()
+            .trim(),
+          uniqueID: $("#reserve-unique-id")
+            .val()
+            .trim()
+        };
+      });
+    </script>
   </body>
 </html>
